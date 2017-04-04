@@ -1,2 +1,3 @@
+
 cd ../
 zip -P1qaz2wsx flf/flf_$(hostname)_$(date +%Y%m%d).zip flf/*.{c,h} flf/Makefile flf/hex.pl
