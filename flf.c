@@ -36,29 +36,29 @@
 #include "fixed_file_util.h"
 #include "fixed_file_io.h"
 
-const char *SRCFILE_ENCODE = "UTF-8";
-const char *welcome =
+static const char *SRCFILE_ENCODE = "UTF-8";
+static const char *welcome =
     "Fixed-Length-Flatfile View & Edit Ver.1.4 : 固定長flatfileの参照・更新ﾂｰﾙ";
-char welmsg[512] = "";
+static char welmsg[512] = "";
 
-const size_t DBGLINE = 0;
-const size_t SEQLINE = 1;
+static const size_t DBGLINE = 0;
+static const size_t SEQLINE = 1;
 
-const size_t DATALINE_START = 3;
-size_t DATALINE_WIDTH = 100;
+static const size_t DATALINE_START = 3;
+static size_t DATALINE_WIDTH = 100;
 
-const size_t DATALINE_CNT = 5;  // all line + empty line
-const size_t DATALINE_MBCHAR = 0;
-const size_t DATALINE_GAGE = 1;
-const size_t DATALINE_HEXUPPER = 2;
-const size_t DATALINE_HEXLOWER = 3;
+static const size_t DATALINE_CNT = 5;   // all line + empty line
+static const size_t DATALINE_MBCHAR = 0;
+static const size_t DATALINE_GAGE = 1;
+//static const size_t DATALINE_HEXUPPER = 2;
+//static const size_t DATALINE_HEXLOWER = 3;
 
-flf_bool_t ALLOWEDIT_FLG = FLF_FALSE;
-flf_bool_t RECEDITING_FLG = FLF_FALSE;
-flf_bool_t EDITMODE_FLG = FLF_FALSE;
+static flf_bool_t ALLOWEDIT_FLG = FLF_FALSE;
+static flf_bool_t RECEDITING_FLG = FLF_FALSE;
+static flf_bool_t EDITMODE_FLG = FLF_FALSE;
 
-WINDOW *win[10];
-int win_cnt = 0;
+static WINDOW *win[10];
+static int win_cnt = 0;
 
 // *********************************************************************
 void usage(const char *argv0)
@@ -524,7 +524,7 @@ int main(int argc, char *argv[])
     int prev_k = 0;
     ffi_dir_t dir = NONE;
 
-    setlocale(LC_CTYPE, "");
+    setlocale(LC_ALL, "");
 
     printf("MB_LEN_MAX=%d\n", MB_LEN_MAX);
 #pragma GCC diagnostic ignored "-Wformat"

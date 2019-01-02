@@ -119,6 +119,7 @@ flf_bool_t ffi_open(const ffi_init_t init, ffi_t * ffi)
 }
 
 // *********************************************************************
+static
 flf_bool_t read_seq(ffi_t * ffi, const size_t seq, flf_bool_t mb_conv_flg)
 // *********************************************************************
 {

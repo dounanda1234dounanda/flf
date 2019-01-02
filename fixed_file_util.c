@@ -34,10 +34,10 @@ typedef struct {
     flf_bool_t add_shift;
 } encode_t;
 
-encode_t enc_tbl[5];
+static encode_t enc_tbl[5];
 
-int enc_idx = 0;
-int enc_cnt = 0;
+static int enc_idx = 0;
+static int enc_cnt = 0;
 
 // *********************************************************************
 flf_bool_t encode_init(const char *encode)
@@ -153,6 +153,7 @@ void encode_get_list(char *list)
 }
 
 // *********************************************************************
+static
 encode_t *encode_get_current()
 // *********************************************************************
 {
@@ -250,6 +251,7 @@ void char_conv(ffi_t * ffi)
 }
 
 // *********************************************************************
+static
 flf_bool_t one_letter(mb_t * mb, char *str, size_t n)
 // *********************************************************************
 {
@@ -271,6 +273,7 @@ flf_bool_t one_letter(mb_t * mb, char *str, size_t n)
 }
 
 // *********************************************************************
+static
 size_t insert_jis_shiftin(char *op, unsigned char *ip, size_t n)
 // *********************************************************************
 {
